@@ -22,7 +22,7 @@ const Toggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="w-10 h-10 flex items-center justify-center bg-base-200 rounded-full transition duration-300 hover:scale-105"
+      className="w-10 h-10 flex items-center cursor-pointer justify-center bg-base-200 rounded-full transition duration-300 hover:scale-105"
       aria-label="Toggle Theme"
     >
       {theme === "light" ? (

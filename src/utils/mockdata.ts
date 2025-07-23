@@ -38,6 +38,6 @@ export function generateMockEmployee(): Employee {
   };
 }
 
-export function generateMockEmployees(count = 50): Employee[] {
+export function generateMockEmployees(count = 150): Employee[] {
   return Array.from({ length: count }, () => generateMockEmployee());
 }

@@ -1,8 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router";
-import { generateMockEmployees } from "./utils/mockdata";
+// import { generateMockEmployees } from "./utils/mockdata";
 import { lazy, Suspense } from "react";
 
 import "./index.css";
+import { useEmployeeData } from "./hooks/useEmployeeData";
 
 const DashboardLayout = lazy(() => import("./layouts/DashboardLayout"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -12,8 +13,9 @@ const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Login = lazy(() => import("./pages/Login"));
 
 const App = () => {
-  const demo = generateMockEmployees();
-  console.log(demo);
+  const { employees, loading } = useEmployeeData();
+  // console.log("Employee Data:", employees);
+  // console.log("Loading State:", loading);
   return (
     <BrowserRouter>
       <Suspense fallback={<div>Loading...</div>}>
