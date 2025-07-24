@@ -12,24 +12,6 @@ export const getTotalDepartments = (
   return employees ? new Set(employees.map((emp) => emp.department)).size : 0;
 };
 
-export const getActiveEmployees = (
-  employees: Employee[] | null | undefined
-): number => {
-  return employees?.filter((emp) => emp.status === "active").length || 0;
-};
-
-export const getEmployeesOnProbation = (
-  employees: Employee[] | null | undefined
-): number => {
-  return employees?.filter((emp) => emp.status === "probation").length || 0;
-};
-
-export const getTerminatedEmployees = (
-  employees: Employee[] | null | undefined
-): number => {
-  return employees?.filter((emp) => emp.status === "terminated").length || 0;
-};
-
 export const getByDepartment = (
   employees: Employee[] | null | undefined
 ): Record<string, number> => {
@@ -51,3 +33,22 @@ export const getByStatus = (
       }, {})
     : {};
 };
+
+const getCountByStatus = (
+  employees: Employee[] | null | undefined,
+  status: string
+): number => {
+  return getByStatus(employees)[status] || 0;
+};
+
+export const getActiveEmployees = (
+  employees: Employee[] | null | undefined
+): number => getCountByStatus(employees, "active");
+
+export const getEmployeesOnProbation = (
+  employees: Employee[] | null | undefined
+): number => getCountByStatus(employees, "probation");
+
+export const getTerminatedEmployees = (
+  employees: Employee[] | null | undefined
+): number => getCountByStatus(employees, "terminated");

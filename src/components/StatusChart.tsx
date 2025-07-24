@@ -9,8 +9,6 @@ const StatusChart = () => {
 
   const rawData = getByStatus(employees);
 
-  console.log(rawData);
-
   const chartData = Object.entries(rawData).map(([status, value]) => ({
     name: status,
     value,

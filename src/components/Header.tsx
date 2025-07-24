@@ -1,6 +1,6 @@
 import { MenuIcon, LayoutDashboard } from "lucide-react";
 import Toggle from "./Toggle";
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 
 type HeaderProps = {
   onToggleSidebar: () => void;
@@ -30,10 +30,12 @@ const Header = ({ onToggleSidebar }: HeaderProps) => {
 
         <div className="flex items-center gap-4">
           {isDashboard && (
-            <button className="btn btn-primary btn-sm sm:btn-md rounded-full px-4 sm:px-6 transition-transform hover:scale-105">
-              <span className="text-lg font-bold">+</span>
-              <span className="hidden sm:inline ml-1">New</span>
-            </button>
+            <Link to="/employees/new">
+              <button className="btn btn-primary btn-sm sm:btn-md rounded-full px-4 sm:px-6 transition-transform hover:scale-105">
+                <span className="text-lg font-bold">+</span>
+                <span className="hidden sm:inline ml-1">New</span>
+              </button>
+            </Link>
           )}
 
           <Toggle />

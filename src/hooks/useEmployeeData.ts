@@ -27,5 +27,5 @@ export const useEmployeeData = () => {
     fetchEmployees();
   }, []);
 
-  return { employees, loading };
+  return { employees, loading, setEmployees };
 };

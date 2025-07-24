@@ -7,11 +7,11 @@ const Dashboard = () => {
     <main>
       <div className="w-[90%] sm:w-[85%] max-w-[1280px] mx-auto">
         <h1 className="text-base-content text-2xl font-bold mb-5">Dashboard</h1>
-
-        {/* Stats summary */}
+        <h2 className="text-base-content text-md font-semibold mb-5">
+          Overview
+        </h2>
         <DashboardStats />
 
-        {/* Charts */}
         <div className="flex flex-wrap gap-5 mt-6">
           <div className="flex-1 min-w-[300px]">
             <DepartmentChart />
