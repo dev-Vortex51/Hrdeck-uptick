@@ -3,7 +3,7 @@ import { Pen, Trash } from "lucide-react";
 import { useEmployeeData } from "../hooks/useEmployeeData";
 import { useEmployeeContext } from "../context/EmployeeContext";
 import Swal from "sweetalert2";
-import { useNavigate, useParams } from "react-router";
+import { useNavigate } from "react-router";
 
 const ITEMS_PER_PAGE = 5;
 
