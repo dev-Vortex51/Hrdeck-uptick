@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import Fieldset from "./Fieldset";
-import { useEmployeeContext } from "../context/EmployeeContext";
 import type {  Employee, EmployeeFormProps, FormData } from "../types";
 import { useNavigate } from "react-router";
 
@@ -9,7 +8,7 @@ import { useNavigate } from "react-router";
 
 const EmployeeForm = ({ initialValues, onSubmit, mode = "create" }: EmployeeFormProps) => {
   const navigate = useNavigate();
-  const { setEmployees } = useEmployeeContext();
+
 
   const [formData, setFormData] = useState<FormData>( initialValues ||  {
     name: "",
