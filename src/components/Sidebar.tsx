@@ -1,5 +1,6 @@
 import { Home, Users, LogOut } from "lucide-react";
 import { NavLink } from "react-router";
+import { useEmployeeContext } from "../context/EmployeeContext";
 
 type SidebarProps = {
   onToggleSidebar: () => void;
@@ -11,6 +12,13 @@ const navLinks = [
 ];
 
 const Sidebar = ({ onToggleSidebar }: SidebarProps) => {
+  const { setIsAuthenticated } = useEmployeeContext();
+
+  function handleLogout() {
+    onToggleSidebar();
+
+    setIsAuthenticated(false);
+  }
   return (
     <div className="h-full w-64 bg-base-200 text-base-content p-4 flex flex-col">
       {/* Admin Info */}
@@ -44,7 +52,10 @@ const Sidebar = ({ onToggleSidebar }: SidebarProps) => {
 
       {/* Logout */}
       <div className="mt-auto pt-4 border-t border-base-300">
-        <button className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-base-300 transition">
+        <button
+          className="w-full flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-base-300 transition cursor-pointer"
+          onClick={handleLogout}
+        >
           <LogOut className="w-5 h-5" />
           <span className="text-sm">Logout</span>
         </button>

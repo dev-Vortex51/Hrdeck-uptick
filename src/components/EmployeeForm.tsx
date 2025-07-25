@@ -1,28 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import Fieldset from "./Fieldset";
 import { useEmployeeContext } from "../context/EmployeeContext";
-import type { ContractType, Employee } from "../types";
+import type {  Employee, EmployeeFormProps, FormData } from "../types";
 import { useNavigate } from "react-router";
 
-type FormData = {
-  name: string;
-  email: string;
-  phone: string;
-  emergencyContact: string;
-  hireDate: string;
-  department: string;
-  role: string;
-  supervisor: string;
-  contractType: ContractType;
-  profilePhoto: string | File | null;
-};
 
-const EmployeeForm = () => {
+
+const EmployeeForm = ({ initialValues, onSubmit, mode = "create" }: EmployeeFormProps) => {
   const navigate = useNavigate();
   const { setEmployees } = useEmployeeContext();
 
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<FormData>( initialValues ||  {
     name: "",
     email: "",
     phone: "",
@@ -34,6 +23,12 @@ const EmployeeForm = () => {
     contractType: "",
     profilePhoto: "",
   });
+
+
+
+  useEffect(() => {
+    if (initialValues) setFormData(initialValues);
+  }, [initialValues]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value, type, files } = e.target;
@@ -93,10 +88,19 @@ const EmployeeForm = () => {
     const newEmployee: Employee = {
       id: Date.now().toString(),
       ...formData,
-      status: "active",
+      status: "recent",
     };
 
-    setEmployees((prev) => [...prev, newEmployee]);
+    if(mode === 'create'){
+      onSubmit(newEmployee)
+    }else{
+      onSubmit({
+        ...formData,
+        id: initialValues?.id || '',
+        status: initialValues?.status || 'active',
+      })
+    }
+    
 
     Swal.fire({
       icon: "success",
@@ -201,12 +205,13 @@ const EmployeeForm = () => {
         type="file"
         name="profilePhoto"
         onChange={handleChange}
+        className="file-input"
       />
       <button
         type="submit"
         className="btn btn-primary col-span-full w-full sm:w-auto"
       >
-        Submit
+        {mode === 'create' ? 'Create' : 'Edit'}
       </button>
     </form>
   );

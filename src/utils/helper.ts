@@ -49,6 +49,6 @@ export const getEmployeesOnProbation = (
   employees: Employee[] | null | undefined
 ): number => getCountByStatus(employees, "probation");
 
-export const getTerminatedEmployees = (
+export const getRecentEmployees = (
   employees: Employee[] | null | undefined
-): number => getCountByStatus(employees, "terminated");
+): number => getCountByStatus(employees, "recent");

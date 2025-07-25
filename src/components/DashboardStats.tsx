@@ -32,7 +32,7 @@ const DashboardStats = () => {
       />
 
       <StatCard
-        title="Active / On Probation / Terminated"
+        title="Active / On Probation / Recently Hired"
         value={`${activeEmployees}${""}/${""}${onProbation}${""}/${""}${
           totalEmployees - activeEmployees - onProbation
         }`}

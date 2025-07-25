@@ -3,6 +3,7 @@ import { Pen, Trash } from "lucide-react";
 import { useEmployeeData } from "../hooks/useEmployeeData";
 import { useEmployeeContext } from "../context/EmployeeContext";
 import Swal from "sweetalert2";
+import { useNavigate, useParams } from "react-router";
 
 const ITEMS_PER_PAGE = 5;
 
@@ -93,15 +94,17 @@ const TableRow = ({
   status,
   index,
 }: TableRowProps) => {
+
   const { setEmployees } = useEmployeeContext();
+  const navigate = useNavigate();
   const getStatusStyle = (status: string) => {
     switch (status) {
       case "active":
         return "bg-success/20 text-success";
       case "probation":
         return "bg-warning/20 text-warning";
-      case "terminated":
-        return "bg-error/20 text-error";
+      case "recent":
+        return "bg-blue-500/20 text-blue-500";
       default:
         return "bg-gray-200 text-gray-600";
     }
@@ -145,12 +148,12 @@ const TableRow = ({
         </span>
       </p>
       <div className="flex justify-end space-x-2">
-        <button className="btn btn-sm bg-success/20 rounded-full">
+        <button className="btn btn-sm bg-success/20 rounded-full" onClick={() => navigate(`/employees/edit/${index}`)}>
           <Pen className="size-4 text-success" />
         </button>
         <button
           className="btn btn-sm bg-error/20 rounded-full"
-          onClick={() => handleDelete(index)}
+          onClick={() =>handleDelete(index)}
         >
           <Trash className="size-4 text-error" />
         </button>

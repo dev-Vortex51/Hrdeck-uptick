@@ -19,6 +19,8 @@ interface EmployeeContextProps {
   setFilterBy: React.Dispatch<React.SetStateAction<FilterOption>>;
   sortEmployees: (list: Employee[], sortBy: SortOption) => Employee[];
   filterEmployees: (list: Employee[], filterBy: FilterOption) => Employee[];
+  isAuthenticated: boolean;
+  setIsAuthenticated: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const EmployeeContext = createContext<EmployeeContextProps | null>(null);
@@ -28,6 +30,8 @@ export const EmployeeProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   const [employees, setEmployees] = useState<Employee[]>([]);
   const [sortBy, setSortBy] = useState<SortOption>("name");
   const [filterBy, setFilterBy] = useState<FilterOption>("All");
@@ -68,6 +72,8 @@ export const EmployeeProvider = ({
         setFilterBy,
         sortEmployees,
         filterEmployees,
+        isAuthenticated,
+        setIsAuthenticated,
       }}
     >
       {children}

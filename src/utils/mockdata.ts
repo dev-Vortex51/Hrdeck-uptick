@@ -6,7 +6,7 @@ import {
 } from "../types";
 
 const departments = ["Engineering", "HR", "Marketing", "Sales", "Finance"];
-const statuses: EmployeeStatus[] = ["active", "probation", "terminated"];
+const statuses: EmployeeStatus[] = ["active", "probation", "recent"];
 const contractTypes: ContractType[] = ["permanent", "contract", "intern"];
 const roles = [
   "Software Engineer",
