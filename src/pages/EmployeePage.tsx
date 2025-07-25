@@ -1,13 +1,17 @@
 import { Link } from "react-router";
 
-import { type EmployeeStatus, type ContractType } from "../types";
 import Filters from "../components/Filters";
 import Sort from "../components/Sort";
 import EmployeeTable from "../components/EmployeeTable";
 
-const departments = ["Engineering", "HR", "Marketing", "Sales", "Finance"];
-const statuses: EmployeeStatus[] = ["active", "probation", "terminated"];
-const contractTypes: ContractType[] = ["permanent", "contract", "intern"];
+const departments = [
+  "Engineering",
+  "HR",
+  "Marketing",
+  "Sales",
+  "Finance",
+  "All",
+];
 
 const EmployeePage = () => {
   return (
@@ -27,19 +31,7 @@ const EmployeePage = () => {
         <div className="flex gap-4 max-w-[50rem] mt-6 flex-wrap">
           <Filters defaultOption="DEPARTMENT">
             {departments.map((dep) => (
-              <option>{dep.toUpperCase()}</option>
-            ))}
-          </Filters>
-
-          <Filters defaultOption="STATUS">
-            {statuses.map((status) => (
-              <option>{status.toUpperCase()}</option>
-            ))}
-          </Filters>
-
-          <Filters defaultOption="CONTRACT TYPE">
-            {contractTypes.map((contract) => (
-              <option>{contract.toUpperCase()}</option>
+              <option>{dep}</option>
             ))}
           </Filters>
         </div>

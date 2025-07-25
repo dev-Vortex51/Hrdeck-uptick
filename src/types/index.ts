@@ -1,5 +1,5 @@
-export type ContractType = "permanent" | "contract" | "intern";
-export type EmployeeStatus = "active" | "probation" | "terminated";
+export type ContractType = "permanent" | "contract" | "intern" | "";
+export type EmployeeStatus = "active" | "probation" | "terminated" | "";
 export type UserRole = "admin" | "viewer";
 
 export interface Employee {
@@ -14,7 +14,7 @@ export interface Employee {
   supervisor?: string;
   status: EmployeeStatus;
   contractType: ContractType;
-  profilePhoto?: string; // base64 or URL
+  profilePhoto?: string | null | File; 
 }
 
 export interface User {
@@ -24,20 +24,8 @@ export interface User {
   role: UserRole;
 }
 
-export interface FilterOptions {
-  department?: string;
-  role?: string;
-  status?: EmployeeStatus;
-  contractType?: ContractType;
-}
-
 export type SortKey = "name" | "hireDate";
 export type SortOrder = "asc" | "desc";
-
-export interface SortOption {
-  key: SortKey;
-  order: SortOrder;
-}
 
 export interface SearchOption {
   query: string;

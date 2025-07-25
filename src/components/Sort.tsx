@@ -1,15 +1,16 @@
-import { useState } from "react";
+import { useEmployeeContext } from "../context/EmployeeContext";
+type SortOption = "name" | "date";
 
 const Sort = () => {
-  const [sortBy, setSortBy] = useState("name");
+  const { sortBy, setSortBy } = useEmployeeContext();
 
-  const handleSortBy = (value: string) => {
+  const handleSortBy = (value: SortOption) => {
     setSortBy(value);
   };
   return (
     <div className="flex items-center gap-4 mt-6 ">
       <div
-        className={`tab  p-3 rounded-md text-base-content ${
+        className={` cursor-pointer text-base-content  p-3 rounded-md text-base-content ${
           sortBy === "name" ? "bg-primary" : "bg-base-300"
         } `}
         onClick={() => handleSortBy("name")}
@@ -17,7 +18,7 @@ const Sort = () => {
         Name (A-Z)
       </div>
       <div
-        className={`tab  p-3 rounded-md text-base-content ${
+        className={` cursor-pointer text-base-content  p-3 rounded-md text-base-content ${
           sortBy === "date" ? "bg-primary" : "bg-base-300"
         } `}
         onClick={() => handleSortBy("date")}
