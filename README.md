@@ -46,7 +46,7 @@ Hrdeck Uptick is a modern HR management application designed to streamline talen
 
 ## Live Deployment
 
-Check out the live site here: [https://markethink-uptick.netlify.app](https://hrdeck-uptick.netlify.app)
+Check out the live site here: [https://hrdeck-uptick.netlify.app](https://hrdeck-uptick.netlify.app)
 
 ## Installation & Setup
 
