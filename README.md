@@ -5,6 +5,7 @@ Hrdeck Uptick is a modern HR management application designed to streamline talen
 ---
 
 ## Table of Contents
+
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation & Setup](#installation--setup)
@@ -16,6 +17,7 @@ Hrdeck Uptick is a modern HR management application designed to streamline talen
 ---
 
 ## Features
+
 - **Authentication**: Secure login and protected routes for authorized access.
 - **Dashboard Overview**: Visual stats, department and status charts for quick insights.
 - **Employee Management**:
@@ -31,6 +33,7 @@ Hrdeck Uptick is a modern HR management application designed to streamline talen
 ---
 
 ## Tech Stack
+
 - **Frontend**: [React](https://react.dev/), [TypeScript](https://www.typescriptlang.org/)
 - **Build Tool**: [Vite](https://vitejs.dev/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/), [DaisyUI](https://daisyui.com/)
@@ -40,6 +43,10 @@ Hrdeck Uptick is a modern HR management application designed to streamline talen
 - **Utilities**: [SweetAlert2](https://sweetalert2.github.io/) for alerts, [@faker-js/faker](https://fakerjs.dev/) for mock data
 
 ---
+
+## Live Deployment
+
+Check out the live site here: [https://markethink-uptick.netlify.app](https://hrdeck-uptick.netlify.app)
 
 ## Installation & Setup
 
@@ -53,9 +60,11 @@ Hrdeck Uptick is a modern HR management application designed to streamline talen
    npm install
    ```
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
+
    The app will be available at [http://localhost:5173](http://localhost:5173)
 
 4. **Build for production**
@@ -70,6 +79,7 @@ Hrdeck Uptick is a modern HR management application designed to streamline talen
 ---
 
 ## Usage
+
 - **Login**: Use any email and a password (min 6 chars) to log in (mock authentication).
 - **Dashboard**: View employee stats, department and status charts.
 - **Employees**: List, filter by department, sort by name or hire date, add, edit, or delete employees.
@@ -78,6 +88,7 @@ Hrdeck Uptick is a modern HR management application designed to streamline talen
 ---
 
 ## Folder Structure
+
 ```
 hrdeck/
 ├── public/                # Static assets
@@ -102,9 +113,11 @@ hrdeck/
 ---
 
 ## Contributing
+
 Contributions are welcome! Please open issues or submit pull requests for improvements and bug fixes.
 
 ---
 
 ## License
+
 This project is licensed under the MIT License.
