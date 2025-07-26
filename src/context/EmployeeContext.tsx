@@ -59,7 +59,7 @@ export const EmployeeProvider = ({
     }
   };
 
-  // console.log(filterEmployees(employees, filterBy));
+  
 
   return (
     <EmployeeContext.Provider

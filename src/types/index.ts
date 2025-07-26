@@ -3,6 +3,11 @@ export type EmployeeStatus = "active" | "probation" | "recent" | "";
 export type UserRole = "admin" | "viewer";
 
 
+export type SidebarProps = {
+  onToggleSidebar: () => void;
+};
+
+
 export type FormData = {
   name: string;
   email: string;

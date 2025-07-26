@@ -3,15 +3,8 @@ import { Link } from "react-router";
 import Filters from "../components/Filters";
 import Sort from "../components/Sort";
 import EmployeeTable from "../components/EmployeeTable";
+import { departments } from "../constants/data";
 
-const departments = [
-  "Engineering",
-  "HR",
-  "Marketing",
-  "Sales",
-  "Finance",
-  "All",
-];
 
 const EmployeePage = () => {
   return (

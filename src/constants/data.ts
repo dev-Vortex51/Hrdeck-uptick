@@ -1,3 +1,5 @@
+import { Home, Users } from "lucide-react";
+
 export const fields = [
   {
     label: "name",
@@ -61,3 +63,19 @@ export const fields = [
     name: "profilePhoto",
   },
 ];
+
+export const departments = [
+  "Engineering",
+  "HR",
+  "Marketing",
+  "Sales",
+  "Finance",
+  "All",
+];
+
+export const navLinks = [
+  { label: "Dashboard", icon: Home, to: "/dashboard" },
+  { label: "Employees", icon: Users, to: "/employees" },
+];
+
+export const ITEMS_PER_PAGE = 5;

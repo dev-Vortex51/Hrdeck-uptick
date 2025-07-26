@@ -1,15 +1,11 @@
-import { Home, Users, LogOut } from "lucide-react";
+import {  LogOut } from "lucide-react";
 import { NavLink } from "react-router";
 import { useEmployeeContext } from "../context/EmployeeContext";
+import { navLinks } from "../constants/data";
+import type { SidebarProps } from "../types";
 
-type SidebarProps = {
-  onToggleSidebar: () => void;
-};
 
-const navLinks = [
-  { label: "Dashboard", icon: Home, to: "/dashboard" },
-  { label: "Employees", icon: Users, to: "/employees" },
-];
+
 
 const Sidebar = ({ onToggleSidebar }: SidebarProps) => {
   const { setIsAuthenticated } = useEmployeeContext();
